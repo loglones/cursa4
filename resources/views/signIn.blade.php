@@ -11,10 +11,24 @@
 <div class="bodySignIn">
     <div class="login-container">
         <h1 class="signInAccount">Вход в аккаунт</h1>
-        <form>
+
+        @if(session('error'))
+            <div class="alert alert-danger" style="color: red; margin-bottom: 15px;">
+                {{ session('error') }}
+            </div>
+        @endif
+
+        @if(session('success'))
+            <div class="alert alert-success" style="color: green; margin-bottom: 15px;">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <form method="POST" action="{{ route('signIn') }}">
+            @csrf
             <div class="input-group">
-                <label class="login" for="username">Логин</label>
-                <input class="nameSignIN" type="text" id="username" name="username" required>
+                <label class="login" for="email">Email</label>
+                <input class="nameSignIN" type="email" id="email" name="email" value="{{ old('email') }}" required>
             </div>
             <div class="input-group">
                 <label class="login" for="password">Пароль</label>

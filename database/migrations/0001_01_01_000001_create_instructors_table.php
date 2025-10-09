@@ -16,7 +16,7 @@ return new class extends Migration
            $table->string('fio');
            $table->text('info');
            $table->string('photo')->nullable();
-           $table->decimal('rating', 2,2)->default(0.00);
+           $table->decimal('rating', 3,2)->default(0.00);
            $table->timestamps();
         });
     }

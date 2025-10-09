@@ -11,22 +11,34 @@
 <div class="body">
     <div class="registration-container">
         <h2 class="regH2">Регистрация</h2>
-        <form>
+
+        @if($errors->any())
+            <div class="alert alert-danger" style="color: red; margin-bottom: 15px;">
+                <ul style="margin: 0; padding-left: 20px;">
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <form method="POST" action="{{ route('signUp') }}">
+            @csrf
             <div class="form-group">
-                <label for="username">Имя пользователя</label>
-                <input class="nameReg" type="text" id="username" name="username" required>
+                <label for="fio">Фамилия Имя Отчество</label>
+                <input class="nameReg" type="text" id="fio" name="fio" value="{{ old('fio') }}" required>
             </div>
             <div class="form-group">
                 <label for="email">Электронная почта</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" value="{{ old('email') }}" required>
             </div>
             <div class="form-group">
                 <label for="password">Пароль</label>
                 <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
-                <label class="confirmPassword" for="confirm-password">Подтверждение пароля</label>
-                <input class="nameReg" type="password" id="confirm-password" name="confirm-password" required>
+                <label class="confirmPassword" for="password_confirmation">Подтверждение пароля</label>
+                <input class="nameReg" type="password" id="password_confirmation" name="password_confirmation" required>
             </div>
             <button class="regConf" type="submit">Зарегистрироваться</button>
         </form>

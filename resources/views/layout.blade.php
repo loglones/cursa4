@@ -9,22 +9,35 @@
 </head>
 <body>
 
-<!-- Шапка -->
+
 <header class="firstHead">
     <div class="wrapper headMenu">
         <div class="button droneTipes"><a class="navMenuHead" href="{{ route('droneTypes') }}">Виды дронов</a></div>
         <div class="button courses"><a class="navMenuHead" href="{{ route('courses') }}">Курсы</a></div>
         <div class="button instrutors"><a class="navMenuHead" href="{{ route('instructors') }}">Инструкторы</a></div>
         <div class="button reviews"><a class="navMenuHead" href="{{ route('reviews') }}">Отзывы</a></div>
-        <div class="profile"><a class="navMenuHead" href="{{ route('profile') }}"><img class="iconHeader" src="{{ asset('img/profile1w_1.png') }}" alt="Кнопка профиля"></a></div>
+        <div class="profile">
+            @auth
+                @if(auth()->user()->isAdmin() || auth()->user()->isUser())
+                    <a class="navMenuHead" href="{{ route('profile') }}">
+                        <img class="iconHeader" src="{{ asset('img/profile1w_1.png') }}" alt="Кнопка профиля">
+                    </a>
+                @endif
+            @else
+                <div style="display: flex; gap: 15px;">
+                    <a class="navMenuHead" href="{{ route('signIn') }}" style="text-decoration: none; color: white;">Вход</a>
+                    <a class="navMenuHead" href="{{ route('signUp') }}" style="text-decoration: none; color: white;">Регистрация</a>
+                </div>
+            @endauth
+        </div>
         <div class="mainMenu"><a class="navMenuHead" href="{{ route('home') }}"><img class="iconHeader" src="{{ asset('img/logo2b_1.png') }}" alt="Кнопка главной страницы"></a></div>
     </div>
 </header>
 
-<!-- Основное содержимое -->
+
 @yield('content')
 
-<!-- Футер -->
+
 <div class="footer">
     <div class="contFooter">
         <div class="navMenuFooter">
