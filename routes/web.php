@@ -24,6 +24,8 @@ Route::get('/reviews', [ReviewsController::class, 'index'])->name('reviews');
 //это для авторизированных
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/profile/update-photo', [ProfileController::class, 'updatePhoto'])->name('profile.updatePhoto');
 });
 //это для авторизации
 Route::get('/sign-in', [SignInController::class, 'index'])->name('signIn');

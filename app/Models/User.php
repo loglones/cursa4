@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Facades\Storage; //фасоды для равботы с файлами
 
 class User extends Authenticatable
 {
@@ -82,4 +83,16 @@ class User extends Authenticatable
         return $this->belongsToMany(Course::class, 'user_courses')->withTimestamps();
 
     }
+
+    //аксессор автоматически вызывется при обращении к $user->photo_url
+    public function getPhotoUrlAttribute()
+    {
+        if($this->photo) {
+            //фасад для генерации юрл
+            return Storage::disk('public')->url('img/' . $this->photo);
+        }
+        return asset('img/melkov.png');
+    }
+
+
 }
