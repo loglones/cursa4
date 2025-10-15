@@ -26,13 +26,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
     Route::post('/profile/update-photo', [ProfileController::class, 'updatePhoto'])->name('profile.updatePhoto');
+    Route::post('/reviews', [ReviewsController::class, 'store'])->name('reviews.store');
 });
 //это для авторизации
 Route::get('/sign-in', [SignInController::class, 'index'])->name('signIn');
 Route::post('/sign-in', [AuthController::class, 'login']);
 Route::get('/sign-up', [SignUpController::class, 'index'])->name('signUp');
 Route::post('/sign-up', [AuthController::class, 'register']);
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout.get');
 //это для подтверждения
 Route::get('/email/verify', function () {
     return view('auth.verify-email');

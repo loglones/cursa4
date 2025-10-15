@@ -27,4 +27,5 @@ class ReviewsController extends Controller
         ]);
         return redirect()->route('reviews')->with('success', 'Отзыв успешно добавлен!');
     }
+
 }

@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('instructors', function (Blueprint $table) {
            $table->id();
            $table->string('fio');
-           $table->text('info');
+           $table->text('experience');
+           $table->text('skills');
+           $table->text('drone_types');
+           $table->text('achievements');
            $table->string('photo')->nullable();
            $table->decimal('rating', 3,2)->default(0.00);
            $table->timestamps();

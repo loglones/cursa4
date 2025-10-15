@@ -19,9 +19,12 @@
         <div class="profile">
             @auth
                 @if(auth()->user()->isAdmin() || auth()->user()->isUser())
-                    <a class="navMenuHead" href="{{ route('profile') }}">
-                        <img class="iconHeader" src="{{ asset('img/profile1w_1.png') }}" alt="Кнопка профиля">
-                    </a>
+                    <div class="contForProfileAndExit">
+                        <a class="navMenuHead" href="{{ route('profile') }}">
+                            <img class="iconHeader" src="{{ asset('img/profile1w_1.png') }}" alt="Кнопка профиля">
+                        </a>
+                        <a class="navMenuHead logout-btn" href="{{ route('logout.get') }}">Выход</a>
+                    </div>
                 @endif
             @else
                 <div style="display: flex; gap: 15px;">
