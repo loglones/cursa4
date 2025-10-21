@@ -10,7 +10,10 @@
 
      protected $fillable = [
          'fio',
-         'info',
+         'experience',
+         'skills',
+         'drone_types',
+         'achievements',
          'photo',
          'rating',
      ];

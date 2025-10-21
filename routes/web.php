@@ -11,6 +11,7 @@ use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
+use App\Http\Controllers\Admin\InstructorController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 
@@ -34,6 +35,12 @@ Route::post('/sign-in', [AuthController::class, 'login']);
 Route::get('/sign-up', [SignUpController::class, 'index'])->name('signUp');
 Route::post('/sign-up', [AuthController::class, 'register']);
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout.get');
+//админка
+Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
+    Route::get('/instructors/create', [InstructorController::class, 'create'])->name('admin.instructors.create');
+    Route::post('/instructors', [InstructorController::class, 'store'])->name('admin.instructors.store');
+    Route::get('/instructors/{id}/delete', [InstructorController::class, 'destroy'])->name('admin.instructors.destroy');
+});
 //это для подтверждения
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
