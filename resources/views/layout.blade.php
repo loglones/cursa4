@@ -17,11 +17,13 @@
         <div class="button instrutors"><a class="navMenuHead" href="{{ route('instructors') }}">Инструкторы</a></div>
         <div class="button reviews"><a class="navMenuHead" href="{{ route('reviews') }}">Отзывы</a></div>
         <div class="profile">
-            @if(auth()->user()->isAdmin())
-                <a class="admin-users-link" href="{{ route('admin.users.index') }}">
-                    Пользователи
-                </a>
-            @endif
+            @auth
+                @if(auth()->user()->isAdmin())
+                    <a class="admin-users-link" href="{{ route('admin.users.index') }}">
+                        Пользователи
+                    </a>
+                @endif
+            @endauth
             @auth
                 @if(auth()->user()->isAdmin() || auth()->user()->isUser())
                     <div class="contForProfileAndExit">
