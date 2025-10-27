@@ -176,7 +176,28 @@
             </div>
             <div class="contForAssigmentsBlocks">
                 <div class="blockAssignmentTheory">
-                    <p class="zagl">тут доолжно быть оценивание от 0 до 5</p>
+                    <div class="contForGradeStudent">
+                        <div class="contForTitleBlock">
+                            <p class="titleName"><i>Оценка</i></p>
+                            <p class="titleTypeAssignment">Текущий балл</p>
+                        </div>
+                        <div class="profile-grade-container">
+                            <p class="profile-grade-score">
+                                {{ $user->current_grade }}
+                            </p>
+                            <p class="profile-grade-stars">
+                                @if(is_numeric($user->current_grade))
+                                    @for($i = 1; $i <= 5; $i++)
+                                        <span class="{{ $i <= $user->current_grade ? 'profile-grade-star-filled' : 'profile-grade-star-empty' }}">
+                        ★
+                    </span>
+                                    @endfor
+                                @else
+                                    <span class="profile-grade-star-empty">☆☆☆☆☆</span>
+                                @endif
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="blockAssignmentPractical">
                     <div class="contForTitleBlock">

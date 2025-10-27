@@ -75,13 +75,17 @@ class User extends Authenticatable
 
     public function grades(): HasMany
     {
-        return $this->hasMany(UserGrades::class);
+        return $this->hasMany(UserGrade::class);
     }
 
     public function courses(): BelongsToMany
     {
         return $this->belongsToMany(Course::class, 'user_courses')->withTimestamps();
 
+    }
+    public function getCurrentGradeAttribute()
+    {
+        return $this->grades->first()?->grade ?? 'Оценка не выставлена';
     }
 
     //аксессор автоматически вызывется при обращении к $user->photo_url
