@@ -56,7 +56,7 @@
     </button>
 </form>
 
-<form method="POST" action="{{ route('logout') }}" style="margin-top: 20px;">
+<form method="POST" action="{{ route('logout.get') }}" style="margin-top: 20px;">
     @csrf
     <button type="submit" style="width: 100%; background: #6c757d; color: white; border: none; padding: 12px; border-radius: 5px; cursor: pointer;">
         Выйти из аккаунта

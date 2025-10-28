@@ -62,6 +62,7 @@ class ProfileController extends Controller
         }
 
         try{
+
             if($user->photo && Storage::disk('public')->exists('img/' . $user->photo)){
                 Storage::disk('public')->delete('img/' . $user->photo);
             }// удаляем фото если уже стоит

@@ -47,7 +47,7 @@ class AuthController extends Controller{
         return back()->with('error','Неверные email или пароль.');
     }
 
-    public function  showRegisterForm()
+    public function showRegisterForm()
     {
         return view('signUp');
     }

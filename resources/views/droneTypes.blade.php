@@ -8,7 +8,7 @@
                 <b><i>Недостатки:</i></b> низкая скорость, высокие энергозатраты, ограниченный радиус действия, недостаточная грузоподъёмность и короткое время полёта (как правило, в пределах часа).
             </p>
             <div class="contAndButtonMultirotor">
-                <div class="contPhotoMulti"><img class="photoMulti" src="{{ asset('img/droneTypes/multirotor.jpg') }}" alt="Мультироторный дрон"></div>
+                <div class="contPhotoMulti"><img class="photoMulti" src="{{ asset('img/multirotor.jpg') }}" alt="Мультироторный дрон"></div>
                 <div class="enrol"><a href="" class="enrolUrl multiButton">Записаться</a></div>
             </div>
         </div>
@@ -16,7 +16,7 @@
     <div class="cloudContOnerotor">
         <div class="contOnerotor">
             <div class="contAndButtonOnerotor">
-                <div class="contPhotoOne"><img class="photoOne" src="{{ asset('img/droneTypes/unmanned_helicopter.jpg') }}" alt="Беспилотный чертолет"></div>
+                <div class="contPhotoOne"><img class="photoOne" src="{{ asset('img/unmanned_helicopter.jpg') }}" alt="Беспилотный чертолет"></div>
                 <div class="enrol"><a href="" class="enrolUrl oneButton">Записаться</a></div>
             </div>
             <p class="txtOnerotor"><b><i>Однороторные дроны</i></b> — это беспилотные летательные аппараты с одним большим винтом (как у вертолёта) и одним или несколькими меньшими винтами для управления направлением полёта.<br><br>
@@ -34,7 +34,7 @@
                 <b><i>Применение:</i></b> Этот тип дронов чаще используется в военных или научных целях, так как они могут летать на большие расстояния и высоты, переносить тяжёлое оборудование и выполнять сложные задачи.
             </p>
             <div class="contAndButtonFixedWing">
-                <div class="contPhotoFixed"><img class="photoFixed" src="{{ asset('img/droneTypes/fixed_wing.jpg') }}" alt="Дрон с неподвижным крылом"></div>
+                <div class="contPhotoFixed"><img class="photoFixed" src="{{ asset('img/fixed_wing.jpg') }}" alt="Дрон с неподвижным крылом"></div>
                 <div class="enrol"><a href="" class="enrolUrl">Записаться</a></div>
             </div>
         </div>
@@ -42,7 +42,7 @@
     <div class="cloudContGibridDrone">
         <div class="contGibridDrone">
             <div class="contAndButtonGibridDrone">
-                <div class="contPhotoGibrid"><img class="PhotoGibrid" src="{{ asset('img/droneTypes/gibrid_drone.jpg') }}" alt="Гибридный дрон"></div>
+                <div class="contPhotoGibrid"><img class="PhotoGibrid" src="{{ asset('img/gibrid_drone.jpg') }}" alt="Гибридный дрон"></div>
                 <div class="enrol"><a href="" class="enrolUrl">Записаться</a></div>
             </div>
             <p class="textGibridDrone">

@@ -1827,3 +1827,105 @@ main{
     justify-content: space-around;
     align-items: center;
 }
+.no-courses-message {
+    text-align: center;
+    color: white;
+    margin: 100px 0;
+    font-family: "JejuGothic", sans-serif;
+}
+
+.no-courses-message h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.no-courses-message p {
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+/* Стили для кнопки добавления курса */
+.admin-add-course {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.btn-add-instructor {
+    background: #28a745;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: "JejuGothic", sans-serif;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+.btn-add-instructor:hover {
+    background: #218838;
+    color: white;
+    text-decoration: none;
+}
+
+/* Стили для уведомлений */
+.alert-success {
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    font-family: "JejuGothic", sans-serif;
+}
+
+.alert-error {
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    font-family: "JejuGothic", sans-serif;
+}
+
+.alert-error ul {
+    margin: 0;
+    padding-left: 20px;
+}
+/* Стили для админских действий с курсами */
+.contImageAndDescriptionMultirotor {
+    position: relative;
+}
+
+.admin-course-actions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.contImageAndDescriptionMultirotor:hover .admin-course-actions {
+    opacity: 1;
+}
+
+.btn-delete-course {
+    background: #ff4444;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "JejuGothic", sans-serif;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-delete-course:hover {
+    background: #cc3333;
+    color: white;
+    text-decoration: none;
+}

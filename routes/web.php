@@ -13,6 +13,7 @@ use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\Admin\InstructorController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CourseController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 
@@ -43,6 +44,10 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     Route::get('/instructors/{id}/delete', [InstructorController::class, 'destroy'])->name('admin.instructors.destroy');
     Route::get('/users',[UserController::class, 'index'])->name('admin.users.index');
     Route::post('/users/{user}/grade', [UserController::class, 'updateGrade'])->name('admin.users.updateGrade');
+//    Route::get('/courses', [CourseController::class, 'index'])->name('admin.courses.index');
+    Route::get('/courses/create', [CourseController::class, 'create'])->name('admin.courses.create');
+    Route::post('/courses', [CourseController::class, 'store'])->name('admin.courses.store');
+    Route::get('/courses/{id}/delete', [CourseController::class, 'destroy'])->name('admin.courses.destroy');
 });
 //это для подтверждения
 Route::get('/email/verify', function () {
